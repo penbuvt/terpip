@@ -13,7 +13,14 @@ export class Game {
           () => ({ value: 1, player: 0 })
         )
       ),
+      activePlayer: 1,
     };
+  }
+
+  move(row: number, col: number) {
+    const cell = this.state.board[row][col];
+    cell.value++;
+    cell.player = this.state.activePlayer;
   }
 }
 

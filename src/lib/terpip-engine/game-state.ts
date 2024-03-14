@@ -7,4 +7,5 @@ export interface Cell {
 
 export interface GameState {
 	board: BoardData;
+	activePlayer: number;
 }
