@@ -8,7 +8,7 @@
 {#each data as row}
   <tr>
   {#each row as cell}
-    <td>
+    <td class="player-{cell.player}">
       {cell.value}
     </td>
   {/each}
