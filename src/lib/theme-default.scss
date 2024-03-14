@@ -1,0 +1,13 @@
+.terpip-board {
+  .terpip-cell-button {
+    background-color: #edd400;
+
+    &.player-1 {
+      background-color: #73d216;
+    }
+
+    &.player-2 {
+      background-color: #729fcf;
+    }
+  }
+}

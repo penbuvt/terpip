@@ -13,12 +13,12 @@
   }
 </script>
 
-<table>
+<table class="terpip-board">
 {#each data as rowData, rowIndex}
   <tr>
   {#each rowData as cellData, cellIndex}
-    <td class="player-{cellData.player}">
-      <button on:click={createHandleCellClick(rowIndex, cellIndex)}>
+    <td>
+      <button class="terpip-cell-button player-{cellData.player}" on:click={createHandleCellClick(rowIndex, cellIndex)}>
         {cellData.value}
       </button>
     </td>
