@@ -1,6 +1,6 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
-  import type { BoardData } from '$lib/game-state.ts';
+  import type { BoardData } from '$lib/terpip-engine/game-state.ts';
 
   const dispatch = createEventDispatcher();
 
