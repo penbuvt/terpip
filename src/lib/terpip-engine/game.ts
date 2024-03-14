@@ -13,6 +13,7 @@ export class Game {
           () => ({ value: 1, player: 0 })
         )
       ),
+      players: 2,
       activePlayer: 1,
     };
   }
@@ -21,6 +22,9 @@ export class Game {
     const cell = this.state.board[row][col];
     cell.value++;
     cell.player = this.state.activePlayer;
+
+    // advance to next player
+    this.state.activePlayer = this.state.activePlayer % this.state.players + 1;
   }
 }
 
