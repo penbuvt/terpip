@@ -1,15 +1,26 @@
 <script lang="ts">
+  import { createEventDispatcher } from 'svelte';
   import type { BoardData } from '$lib/game-state.ts';
 
+  const dispatch = createEventDispatcher();
+
   export let data: BoardData = [];
+
+  function createHandleCellClick(row, col) {
+    return () => {
+      dispatch('playerMove', { row, col });
+    };
+  }
 </script>
 
 <table>
-{#each data as row}
+{#each data as rowData, rowIndex}
   <tr>
-  {#each row as cell}
-    <td class="player-{cell.player}">
-      {cell.value}
+  {#each rowData as cellData, cellIndex}
+    <td class="player-{cellData.player}">
+      <button on:click={createHandleCellClick(rowIndex, cellIndex)}>
+        {cellData.value}
+      </button>
     </td>
   {/each}
   </tr>
